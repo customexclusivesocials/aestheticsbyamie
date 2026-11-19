@@ -1,1 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f7f3ed" />
+  <meta name="description" content="Aesthetics By Amie in Welland, Ontario. A welcoming space for body sugaring, teeth brightening, facials, lash and brow treatments, and personalized skincare." />
+  <meta property="og:title" content="Aesthetics By Amie | A little time, just for you" />
+  <meta property="og:description" content="Thoughtful beauty treatments in a warm, welcoming Welland studio." />
+  <meta property="og:type" content="website" />
+  <title>Aesthetics By Amie | Welland, Ontario</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --paper: #f7f3ed;
+      --cream: #eee7dc;
+      --white: #fffdf9;
+      --ink: #29231f;
+      --muted: #786f67;
+      --rose: #a76f70;
+      --rose-dark: #875354;
+      --line: rgba(54, 43, 35, .14);
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'DM Sans', Arial, sans-serif;
+      --shadow: 0 24px 70px rgba(48, 36, 27, .10);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    .announcement { background: var(--ink); color: #f8f2e9; text-align: center; padding: 10px 18px; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; }
+    .site-header { position: absolute; z-index: 10; top: 38px; left: 0; width: 100%; padding: 24px 6.5%; display: flex; align-items: center; justify-content: space-between; color: #fffaf4; }
+    .brand { display: flex; flex-direction: column; line-height: 1; }
+    .brand strong { font: 600 25px var(--serif); letter-spacing: .01em; }
+    .brand span { margin-top: 7px; font-size: 9px; letter-spacing: .28em; text-transform: uppercase; opacity: .82; }
+    .nav { display: flex; align-items: center; gap: 34px; font-size: 11px; letter-spacing: .13em; text-transform: uppercase; }
+    .nav a:not(.nav-cta) { opacity: .9; transition: opacity .2s; }
+    .nav a:not(.nav-cta):hover { opacity: .6; }
+    .nav-cta { border: 1px solid rgba(255,255,255,.7); padding: 13px 20px; transition: .2s; }
+    .nav-cta:hover { background: white; color: var(--ink); }
+    .menu-toggle { display: none; background: transparent; color: white; border: 0; font-size: 25px; cursor: pointer; }
+    .hero { min-height: 760px; height: min(900px, 94vh); position: relative; display: flex; align-items: center; overflow: hidden; background: #6e5c50; color: #fffaf4; }
+    .hero-image { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(29,24,21,.72) 0%, rgba(29,24,21,.46) 43%, rgba(29,24,21,.08) 100%), url('https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=2200&q=88') center 48%/cover; transform: scale(1.01); }
+    .hero-content { position: relative; z-index: 1; width: min(1180px, 87%); margin: 68px auto 0; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 12px; font-size: 10px; letter-spacing: .25em; text-transform: uppercase; }
+    .eyebrow:before { content: ''; width: 34px; height: 1px; background: currentColor; opacity: .7; }
+    h1, h2, h3, p { margin-top: 0; }
+    .hero h1 { max-width: 700px; margin: 26px 0 20px; font: 500 clamp(58px, 8vw, 108px)/.99 var(--serif); letter-spacing: -.045em; }
+    .hero h1 em { font-weight: 500; }
+    .hero-copy { max-width: 420px; color: rgba(255,250,244,.84); font-size: 14px; line-height: 1.9; }
+    .button-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+    .btn { display: inline-flex; justify-content: center; align-items: center; min-height: 50px; padding: 0 25px; border: 1px solid transparent; font-size: 10px; letter-spacing: .16em; text-transform: uppercase; transition: .25s; cursor: pointer; }
+    .btn-light { background: var(--white); color: var(--ink); }
+    .btn-light:hover { background: var(--rose); color: white; }
+    .btn-outline { border-color: rgba(255,255,255,.65); color: white; }
+    .btn-outline:hover { background: white; color: var(--ink); }
+    .hero-note { position: absolute; right: 6.5%; bottom: 48px; z-index: 1; font: italic 16px var(--serif); color: rgba(255,250,244,.85); }
+    .intro-strip { display: grid; grid-template-columns: 1fr 1fr 1fr; background: var(--white); padding: 28px 7%; border-bottom: 1px solid var(--line); }
+    .intro-item { text-align: center; padding: 7px 15px; border-right: 1px solid var(--line); }
+    .intro-item:last-child { border: 0; }
+    .intro-item strong { display: block; font: 500 20px var(--serif); }
+    .intro-item span { display: block; margin-top: 6px; color: var(--muted); font-size: 9px; letter-spacing: .17em; text-transform: uppercase; }
+    section { padding: 115px 7%; }
+    .section-head { max-width: 680px; margin: 0 auto 55px; text-align: center; }
+    .section-head .eyebrow { color: var(--rose-dark); }
+    h2 { margin: 18px 0 16px; font: 500 clamp(39px, 5vw, 62px)/1.08 var(--serif); letter-spacing: -.035em; }
+    .section-head p { max-width: 520px; margin: 0 auto; color: var(--muted); font-size: 13px; line-height: 1.9; }
+    .about { display: grid; grid-template-columns: 1fr 1fr; gap: 9%; align-items: center; background: var(--cream); }
+    .about-photo-wrap { position: relative; max-width: 540px; }
+    .about-photo { display: block; width: 100%; aspect-ratio: 4/5; object-fit: cover; }
+    .photo-caption { position: absolute; right: -25px; bottom: 30px; padding: 22px 25px; background: var(--white); box-shadow: var(--shadow); font: italic 18px var(--serif); }
+    .about-copy { max-width: 500px; }
+    .about-copy .eyebrow { color: var(--rose-dark); }
+    .about-copy h2 { margin-bottom: 24px; }
+    .about-copy p { color: var(--muted); font-size: 13px; line-height: 2; }
+    .signature { margin-top: 25px; color: var(--rose-dark); font: italic 26px var(--serif); }
+    .services { background: var(--white); }
+    .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; max-width: 1180px; margin: auto; }
+    .service-card { min-height: 280px; padding: 34px 30px; background: var(--paper); border: 1px solid rgba(54,43,35,.08); transition: transform .25s, box-shadow .25s; }
+    .service-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+    .service-number { color: var(--rose); font: italic 17px var(--serif); }
+    .service-card h3 { margin: 28px 0 12px; font: 500 27px var(--serif); }
+    .service-card p { min-height: 58px; color: var(--muted); font-size: 12px; line-height: 1.8; }
+    .text-link { display: inline-flex; align-items: center; gap: 10px; margin-top: 13px; color: var(--rose-dark); font-size: 10px; letter-spacing: .15em; text-transform: uppercase; }
+    .text-link:after { content: '→'; font-size: 16px; transition: transform .2s; }
+    .text-link:hover:after { transform: translateX(4px); }
+    .featured { display: grid; grid-template-columns: .9fr 1.1fr; background: #302923; color: #fffaf4; padding: 0; }
+    .featured-image { min-height: 560px; background: url('https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=1300&q=85') center/cover; }
+    .featured-copy { align-self: center; padding: 80px 12%; }
+    .featured-copy .eyebrow { color: #d7aaa2; }
+    .featured-copy h2 { max-width: 490px; }
+    .featured-copy p { max-width: 480px; color: rgba(255,250,244,.7); font-size: 13px; line-height: 2; }
+    .featured-copy .btn { margin-top: 18px; }
+    .menu { background: var(--paper); }
+    .menu-wrap { max-width: 920px; margin: auto; }
+    .menu-intro { text-align: center; color: var(--muted); font-size: 12px; line-height: 1.8; margin: -28px auto 42px; }
+    .menu-group { margin-bottom: 38px; }
+    .menu-group h3 { padding-bottom: 14px; border-bottom: 1px solid var(--line); font: 500 29px var(--serif); }
+    .menu-row { display: grid; grid-template-columns: 1fr auto; gap: 20px; padding: 19px 0; border-bottom: 1px solid var(--line); }
+    .menu-row h4 { margin: 0 0 6px; font: 500 17px var(--serif); }
+    .menu-row p { max-width: 640px; margin: 0; color: var(--muted); font-size: 11px; line-height: 1.7; }
+    .menu-meta { text-align: right; white-space: nowrap; }
+    .menu-meta strong { display: block; font: 500 17px var(--serif); }
+    .menu-meta span { display: block; margin-top: 5px; color: var(--muted); font-size: 10px; }
+    .menu-footnote { color: var(--muted); font-size: 11px; line-height: 1.8; text-align: center; }
+    .reviews { background: var(--cream); }
+    .review-summary { display: flex; justify-content: center; align-items: center; gap: 18px; margin: -25px 0 42px; }
+    .review-stars { color: #d69b42; letter-spacing: .12em; font-size: 17px; }
+    .review-summary span:last-child { color: var(--muted); font-size: 11px; letter-spacing: .08em; }
+    .review-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 1180px; margin: auto; }
+    .review-card { background: var(--white); padding: 30px; min-height: 220px; }
+    .review-card blockquote { margin: 20px 0 25px; font: italic 20px/1.5 var(--serif); }
+    .review-person { display: flex; align-items: center; gap: 12px; color: var(--muted); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; }
+    .avatar { width: 38px; height: 38px; display: grid; place-items: center; border-radius: 50%; background: #eee8f8; color: #7656d9; font-weight: 700; font-size: 12px; }
+    .review-disclaimer { text-align: center; margin: 25px auto 0; color: var(--muted); font-size: 10px; }
+    .visit { display: grid; grid-template-columns: 1fr 1fr; gap: 9%; align-items: start; background: var(--white); }
+    .visit-copy { max-width: 500px; }
+    .visit-copy .eyebrow { color: var(--rose-dark); }
+    .visit-copy p { color: var(--muted); font-size: 13px; line-height: 1.9; }
+    .contact-list { margin: 30px 0; border-top: 1px solid var(--line); }
+    .contact-line { display: flex; justify-content: space-between; gap: 20px; padding: 16px 0; border-bottom: 1px solid var(--line); font-size: 12px; }
+    .contact-line span:first-child { color: var(--muted); }
+    .hours { background: var(--paper); padding: 35px; }
+    .hours h3 { margin: 0 0 22px; font: 500 29px var(--serif); }
+    .hours-row { display: flex; justify-content: space-between; gap: 18px; padding: 11px 0; border-bottom: 1px solid var(--line); font-size: 11px; }
+    .hours-row strong { font-weight: 500; }
+    .hours-row.closed { color: #9b9188; }
+    .footer { background: var(--ink); color: #f8f2e9; padding: 70px 7% 28px; }
+    .footer-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 30px; padding-bottom: 55px; }
+    .footer-brand strong { font: 500 35px var(--serif); }
+    .footer-brand p { margin-top: 12px; color: rgba(248,242,233,.6); font-size: 11px; line-height: 1.8; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 25px; font-size: 10px; letter-spacing: .13em; text-transform: uppercase; }
+    .footer-bottom { display: flex; justify-content: space-between; gap: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.16); color: rgba(248,242,233,.55); font-size: 9px; letter-spacing: .08em; }
+    .floating-book { position: fixed; z-index: 8; right: 22px; bottom: 22px; display: none; padding: 15px 19px; background: var(--rose-dark); color: white; box-shadow: 0 8px 25px rgba(0,0,0,.18); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; }
+    @media (max-width: 900px) {
+      .site-header { padding: 20px 5%; }
+      .nav { gap: 18px; }
+      .about { gap: 6%; }
+      .service-grid { grid-template-columns: repeat(2, 1fr); }
+      .review-grid { grid-template-columns: 1fr 1fr; }
+      section { padding: 90px 6%; }
+    }
+    @media (max-width: 650px) {
+      .announcement { font-size: 9px; letter-spacing: .1em; }
+      .site-header { top: 33px; }
+      .brand strong { font-size: 21px; }
+      .menu-toggle { display: block; }
+      .nav { display: none; position: absolute; top: 78px; left: 5%; right: 5%; padding: 22px; background: var(--ink); flex-direction: column; align-items: stretch; gap: 20px; }
+      .nav.open { display: flex; }
+      .nav-cta { text-align: center; }
+      .hero { min-height: 690px; height: 88vh; }
+      .hero-image { background-position: 58% center; }
+      .hero-content { width: 88%; margin-top: 50px; }
+      .hero h1 { font-size: clamp(58px, 15vw, 82px); }
+      .hero-copy { max-width: 330px; font-size: 13px; }
+      .hero-note { right: 6%; bottom: 25px; font-size: 13px; }
+      .intro-strip { grid-template-columns: 1fr; padding: 12px 8%; }
+      .intro-item { border-right: 0; border-bottom: 1px solid var(--line); padding: 17px; }
+      .intro-item:last-child { border-bottom: 0; }
+      section { padding: 75px 7%; }
+      .about, .featured, .visit { grid-template-columns: 1fr; }
+      .about { gap: 55px; }
+      .about-photo-wrap { width: 88%; }
+      .photo-caption { right: -30px; }
+      .service-grid, .review-grid { grid-template-columns: 1fr; }
+      .service-card { min-height: 235px; }
+      .featured-image { min-height: 370px; }
+      .featured-copy { padding: 65px 8%; }
+      .menu-row { gap: 10px; }
+      .menu-row p { max-width: 100%; }
+      .menu-meta strong { font-size: 15px; }
+      .review-card { min-height: 190px; }
+      .hours { padding: 28px 22px; }
+      .footer-top, .footer-bottom { flex-direction: column; }
+      .footer-links { gap: 18px; }
+      .floating-book { display: block; }
+    }
+  </style>
+</head>
+<body>
+  <div class="announcement">A welcoming space for your well-deserved me time · Welland, Ontario</div>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Aesthetics By Amie home"><strong>Aesthetics by Amie</strong><span>Beauty · Wellness · You</span></a>
+    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#about">Meet Amie</a><a href="#services">Treatments</a><a href="#reviews">Kind words</a><a href="#visit">Find us</a>
+      <a class="nav-cta" href="https://www.fresha.com/a/aesthetics-by-amie-welland-447-niagara-street-nk3dtg3k" target="_blank" rel="noopener">Book an appointment</a>
+    </nav>
+  </header>
 
+  <main id="top">
+    <section class="hero" aria-label="Welcome">
+      <div class="hero-image"></div>
+      <div class="hero-content">
+        <span class="eyebrow">Your time. Your glow.</span>
+        <h1>A little time,<br /><em>just for you.</em></h1>
+        <p class="hero-copy">Thoughtful beauty treatments, genuine care, and a comfortable space to slow down. Come as you are — leave feeling refreshed, confident, and cared for.</p>
+        <div class="button-row"><a class="btn btn-light" href="https://www.fresha.com/a/aesthetics-by-amie-welland-447-niagara-street-nk3dtg3k" target="_blank" rel="noopener">Explore appointments</a><a class="btn btn-outline" href="#services">Discover treatments</a></div>
+      </div>
+      <div class="hero-note">A little self-care goes a long way.</div>
+    </section>
+
+    <div class="intro-strip" aria-label="Studio highlights">
+      <div class="intro-item"><strong>Personalized care</strong><span>Every client, every visit</span></div>
+      <div class="intro-item"><strong>Women-owned</strong><span>Locally loved in Welland</span></div>
+      <div class="intro-item"><strong>From brows to body</strong><span>Beauty, your way</span></div>
+    </div>
+
+    <section class="about" id="about">
+      <div class="about-photo-wrap">
+        <img class="about-photo" src="https://images.unsplash.com/photo-1600948836101-f9ffda59d250?auto=format&fit=crop&w=1100&q=85" alt="Calm, softly lit beauty treatment studio" loading="lazy" />
+        <div class="photo-caption">Feel good in your own skin.</div>
+      </div>
+      <div class="about-copy">
+        <span class="eyebrow">A warm hello</span>
+        <h2>Beauty should feel<br /><em>like you.</em></h2>
+        <p>Hi, I’m Amie, the owner of Aesthetics by Amie. I created this space to offer a comfortable, welcoming place where you can slow down, relax, and enjoy the “me time” you deserve.</p>
+        <p>I believe self-care doesn’t have to be expensive or over-the-top to make a difference. My goal is to provide personalized, quality treatments that help you feel confident, refreshed, and cared for — every step of the way.</p>
+        <p>Alongside my treatments, I’m also an Aloette skincare consultant and love helping clients find products that feel right for their skin and routine.</p>
+        <div class="signature">Amie x</div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="section-head"><span class="eyebrow">A little something for everyone</span><h2>Made for your<br /><em>kind of glow.</em></h2><p>From a quick beauty refresh to a little more time to unwind, find the treatment that feels right for you.</p></div>
+      <div class="service-grid">
+        <article class="service-card"><span class="service-number">01 / Smooth</span><h3>Body Sugaring</h3><p>A gentle approach to smooth, touchably soft skin, with treatments for both men and women.</p><a class="text-link" href="https://www.fresha.com/a/aesthetics-by-amie-welland-447-niagara-street-nk3dtg3k" target="_blank" rel="noopener">View booking options</a></article>
+        <article class="service-card"><span class="service-number">02 / Brighten</span><h3>Teeth Brightening</h3><p>Give your smile a little extra attention with a confidence-boosting brightening appointment.</p><a class="text-link" href="https://www.fresha.com/a/aesthetics-by-amie-welland-447-niagara-street-nk3dtg3k" target="_blank" rel="noopener">View booking options</a></article>
+        <article class="service-card"><span class="service-number">03 / Restore</span><h3>Facials</h3><p>Take a moment for yourself with a personalized facial and some well-deserved time to reset.</p><a class="text-link" href="https://www.fresha.com/a/aesthetics-by-amie-welland-447-niagara-street-nk3dtg3k" target="_blank" rel="noopener">View booking options</a></article>
+        <article class="service-card"><span class="service-number">04 / Define</span><h3>Lashes & Brows</h3><p>Subtle details, beautiful definition. Explore lash lifts, tints, and brow treatments.</p><a class="text-link" href="#pricing">Explore services</a></article>
+        <article class="service-card"><span class="service-number">05 / Care</span><h3>Junior Services</h3><p>Gentle, age-conscious mini treatments for young clients aged 10–15, in a welcoming space.</p><a class="text-link" href="#pricing">Explore junior menu</a></article>
+        <article class="service-card"><span class="service-number">06 / Nourish</span><h3>Aloette Skincare</h3><p>Personalized skincare guidance and product support to help you build a routine you love.</p><a class="text-link" href="https://www.instagram.com/bookwithamie/" target="_blank" rel="noopener">Ask Amie</a></article>
+      </div>
+    </section>
+
+    <section class="featured">
+      <div class="featured-image" role="img" aria-label="Skincare and self-care products"></div>
+      <div class="featured-copy"><span class="eyebrow">A moment to reset</span><h2>Your self-care<br /><em>starts here.</em></h2><p>You don’t need a special occasion to make time for yourself. Whether you’re visiting for a beauty treatment or looking for a little skincare guidance, Amie is here to make your experience feel easy, personal, and comfortable.</p><a class="btn btn-outline" href="https://www.fresha.com/a/aesthetics-by-amie-welland-447-niagara-street-nk3dtg3k" target="_blank" rel="noopener">Book with Amie</a></div>
+    </section>
+
+    <section class="menu" id="pricing">
+      <div class="section-head"><span class="eyebrow">The treatment menu</span><h2>A few client<br /><em>favourites.</em></h2><p>Explore a selection of available treatments and starting details. For the full, up-to-date menu and appointment availability, visit the online booking page.</p></div>
+      <div class="menu-wrap">
+        <div class="menu-group"><h3>Lash & Brow</h3>
+          <div class="menu-row"><div><h4>Lash Lift & Tint</h4><p>Enhance your natural lashes with a beautiful curl and rich tint for an effortlessly defined look.</p></div><div class="menu-meta"><strong>$75</strong><span>1 hr 15 min</span></div></div>
+          <div class="menu-row"><div><h4>Lash Tint</h4><p>A darker, more defined lash look without the daily mascara.</p></div><div class="menu-meta"><strong>$25</strong><span>30 min</span></div></div>
+        </div>
+        <div class="menu-group"><h3>Junior Services · Ages 10–15</h3>
+          <div class="menu-row"><div><h4>Kid-Friendly Facial</h4><p>A gentle cleanse, hydrating mask, and light moisturizer, tailored for young skin.</p></div><div class="menu-meta"><strong>$50</strong><span>30 min</span></div></div>
+          <div class="menu-row"><div><h4>Half Leg Sugaring</h4><p>A gentle half-leg sugaring appointment for young clients.</p></div><div class="menu-meta"><strong>$25</strong><span>30 min</span></div></div>
+          <div class="menu-row"><div><h4>Brow Sugaring</h4><p>Gentle brow tidy-up to softly shape and frame the face.</p></div><div class="menu-meta"><strong>$10</strong><span>15 min</span></div></div>
+          <div class="menu-row"><div><h4>Half Arm Sugaring</h4><p>A gentle half-arm sugaring service.</p></div><div class="menu-meta"><strong>$20</strong><span>15 min</span></div></div>
+          <div class="menu-row"><div><h4>Bikini Sugaring</h4><p>Junior bikini sugaring service. Please confirm suitability and details with Amie before booking.</p></div><div class="menu-meta"><strong>$20</strong><span>1 hr</span></div></div>
+          <div class="menu-row"><div><h4>Underarms</h4><p>A gentle underarm sugaring service.</p></div><div class="menu-meta"><strong>$10</strong><span>15 min</span></div></div>
+        </div>
+        <p class="menu-footnote">Prices and durations shown are based on the service information provided. Other treatment pricing and availability may vary; please check Fresha for the current full menu.</p>
+        <div style="text-align:center;margin-top:28px"><a class="btn" style="background:var(--rose-dark);color:white" href="https://www.fresha.com/a/aesthetics-by-amie-welland-447-niagara-street-nk3dtg3k" target="_blank" rel="noopener">See the full menu & book</a></div>
+      </div>
+    </section>
+
+    <section class="reviews" id="reviews">
+      <div class="section-head"><span class="eyebrow">Kind words</span><h2>Little moments.<br /><em>Lovely experiences.</em></h2><p>It means so much when clients take the time to share their experience. Thank you for supporting this little business.</p></div>
+      <div class="review-summary"><span class="review-stars">★★★★★</span><span>Client reviews on Fresha</span></div>
+      <div class="review-grid">
+        <article class="review-card"><div class="review-stars">★★★★★</div><blockquote>“Very satisfied”</blockquote><div class="review-person"><span class="avatar">WB</span><span>Wendy B · Fresha review</span></div></article>
+        <article class="review-card"><div class="review-stars">★★★★★</div><blockquote>5-star client rating</blockquote><div class="review-person"><span class="avatar">JC</span><span>Julie C · Fresha review</span></div></article>
+        <article class="review-card"><div class="review-stars">★★★★☆</div><blockquote>4-star client rating</blockquote><div class="review-person"><span class="avatar">KK</span><span>Klara K · Fresha review</span></div></article>
+        <article class="review-card"><div class="review-stars">★★★★★</div><blockquote>5-star client rating</blockquote><div class="review-person"><span class="avatar">JC</span><span>Julie C · Fresha review</span></div></article>
+        <article class="review-card"><div class="review-stars">★★★★★</div><blockquote>5-star client rating</blockquote><div class="review-person"><span class="avatar">SB</span><span>Stephanie B · Fresha review</span></div></article>
+      </div>
+      <p class="review-disclaimer">Names, star ratings, and the one visible written comment are based on the review screenshot. Read the latest client feedback on Fresha.</p>
+      <div style="text-align:center;margin-top:25px"><a class="text-link" href="https://www.fresha.com/a/aesthetics-by-amie-welland-447-niagara-street-nk3dtg3k" target="_blank" rel="noopener">Read more client reviews</a></div>
+    </section>
+
+    <section class="visit" id="visit">
+      <div class="visit-copy"><span class="eyebrow">Come say hello</span><h2>Your little<br /><em>Welland escape.</em></h2><p>Find Aesthetics by Amie at 447 Niagara Street, Unit 1 in Welland, Ontario. Have a question before booking? Reach out — Amie would love to hear from you.</p>
+        <div class="contact-list">
+          <a class="contact-line" href="tel:+19057330636"><span>Call or text Amie</span><strong>905-733-0636 ↗</strong></a>
+          <a class="contact-line" href="https://www.instagram.com/bookwithamie/" target="_blank" rel="noopener"><span>Instagram</span><strong>@bookwithamie ↗</strong></a>
+          <a class="contact-line" href="https://www.google.com/maps/search/?api=1&query=447+Niagara+Street+Unit+1+Welland+Ontario+Canada" target="_blank" rel="noopener"><span>Studio address</span><strong>Get directions ↗</strong></a>
+        </div>
+        <a class="btn" style="background:var(--rose-dark);color:white" href="https://www.fresha.com/a/aesthetics-by-amie-welland-447-niagara-street-nk3dtg3k" target="_blank" rel="noopener">Book your visit</a>
+      </div>
+      <div class="hours"><h3>Studio hours</h3>
+        <div class="hours-row"><span>Monday</span><strong>11:00 AM – 7:00 PM</strong></div>
+        <div class="hours-row"><span>Tuesday</span><strong>5:00 PM – 8:00 PM</strong></div>
+        <div class="hours-row"><span>Wednesday</span><strong>5:00 PM – 9:00 PM</strong></div>
+        <div class="hours-row"><span>Thursday</span><strong>5:00 PM – 9:00 PM</strong></div>
+        <div class="hours-row"><span>Friday</span><strong>9:00 AM – 6:00 PM</strong></div>
+        <div class="hours-row closed"><span>Saturday</span><strong>Closed</strong></div>
+        <div class="hours-row closed"><span>Sunday</span><strong>Closed</strong></div>
+        <p style="margin:20px 0 0;color:var(--muted);font-size:10px;line-height:1.7">Appointment availability is managed through Fresha. Please check the booking page for the latest openings.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand"><strong>Aesthetics by Amie</strong><p>A little time, just for you.<br />447 Niagara Street, Unit 1 · Welland, Ontario</p></div>
+      <div class="footer-links"><a href="#about">Meet Amie</a><a href="#services">Treatments</a><a href="#reviews">Reviews</a><a href="https://www.instagram.com/bookwithamie/" target="_blank" rel="noopener">Instagram</a><a href="https://www.fresha.com/a/aesthetics-by-amie-welland-447-niagara-street-nk3dtg3k" target="_blank" rel="noopener">Book now</a></div>
+    </div>
+    <div class="footer-bottom"><span>© <span id="year"></span> Aesthetics by Amie. All rights reserved.</span><span>Made with care in Niagara.</span></div>
+  </footer>
+  <a class="floating-book" href="https://www.fresha.com/a/aesthetics-by-amie-welland-447-niagara-street-nk3dtg3k" target="_blank" rel="noopener">Book now ↗</a>
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav');
+    toggle.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+      toggle.textContent = isOpen ? '×' : '☰';
+    });
+    nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      nav.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.textContent = '☰';
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
